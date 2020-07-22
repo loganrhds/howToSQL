@@ -140,5 +140,12 @@ JOIN courses c
 ON g.grades_courses_id = c.courses_id
 WHERE c.courses_name = "CS101";
 
-
+SELECT c.courses_name, s.students_name, p.professors_name
+FROM grades g
+JOIN courses c
+ON g.grades_courses_id = c.courses_id
+JOIN students s
+ON g.grades_students_id = s.students_id
+JOIN professors p
+ON g.grades_professors_id = p.professors_id;
 
